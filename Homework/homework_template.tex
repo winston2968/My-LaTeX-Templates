@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Essentials ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{amsfonts, amsthm}
+\usepackage{bbm}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+% --- Margin ---
+\geometry{
+    hmargin=2.5cm, 
+    vmargin=2.5cm,
+    headheight=2.5cm,
+    headsep=0.8cm, 
+    top=3.5cm
+}
+
+% --- Define Macros --- 
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\Lc}{\mathbb{L}}
+\newcommand{\Fc}{\mathbb{F}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\myP}{\mathbb{P}}
+
+
+% --- Answers ---
+\newcounter{numquest}
+\newenvironment{question}{
+    \refstepcounter{numquest}
+    \vspace{0.4cm}
+    \noindent \textbf{Question \thenumquest .}
+}{
+    \par
+}
+
+% Restart answer count
+\newcommand{\newexercice}[1]{
+    \setcounter{numquest}{0}
+    \section*{#1}
+}
+
+% --- Header ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{John Doe \\ CS-1}
+\rhead{\today}
+\cfoot{Page \thepage}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+
+\begin{document}
+
+
+% --- Define Title --- 
+\begin{center}
+    {\scshape Algorithmics} \\
+    \vspace{0.2cm}
+    {\huge\bfseries Homework 1} \\
+\end{center}
+
+\thispagestyle{fancy}
+
+\newexercice{Exercice 1}
+
+\begin{question}
+    
+\end{question}
+
+\end{document}
