@@ -1,0 +1,184 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{multicol}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{ebgaramond}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+
+%-----------------------------------
+% GENERAL SETTINGS
+%-----------------------------------
+
+\definecolor{textgray}{HTML}{222222}
+
+
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.2em, nosep}
+\renewcommand{\baselinestretch}{1.05}
+
+%-----------------------------------
+% TITLES
+%-----------------------------------
+
+\titleformat{\section}
+  {\large\bfseries\scshape}
+  {}{0em}{}
+  [\vspace{-0.3em}\titlerule]
+
+\titlespacing*{\section}{0pt}{0.6em}{1em}
+\setlength{\parskip}{0.35em}
+
+%-----------------------------------
+% SKILLS (little circles)
+%-----------------------------------
+
+\newcommand{\skill}[2]{%
+\noindent\textbf{#1}\hfill%
+\begin{tikzpicture}[baseline={(current bounding box.center)}]
+  \foreach \i in {1,2,3,4,5} {
+    \ifnum \i>#2
+      \filldraw[gray!40] (\i*0.3,0) circle (0.06);
+    \else
+      \filldraw[] (\i*0.3,0) circle (0.06);
+    \fi
+  }
+\end{tikzpicture}\vspace{3pt}%
+}
+
+%-----------------------------------
+% TCOLORBOX (sections)
+%-----------------------------------
+
+\tcbset{
+  cvbox/.style={
+    enhanced,
+    colback=gray!10,
+    boxrule=0.3pt,
+    arc=3pt,
+    left=6pt,
+    right=6pt,
+    top=4pt,
+    bottom=4pt,
+    before skip=5pt,
+    after skip=5pt,
+  }
+}
+
+%-----------------------------------
+\begin{document}
+%-----------------------------------
+
+\begin{center}
+    {\Huge \textbf{\scshape John Doe}}\\[3pt]
+    \color{black}\rule{0.5\linewidth}{0.8pt}
+\end{center}
+
+\vspace{0.6em}
+
+%-----------------------------------
+% CONTACT
+%-----------------------------------
+\begin{center}
+    \faMapMarker*~4850 Witting Radial Suite 214, Littelchester, 68757 Wyoming \quad
+    \faPhone*~+19546440981 \quad
+    \faEnvelope~\href{mailto:john.doe@gmail.com}{john.doe@gmail.com}\\[3pt]
+    \faLinkedin~\href{https://www.linkedin.com/}{LinkedIn} \quad
+    \faGithub~\href{https://github.com}{GitHub}
+\end{center}
+
+\vspace{0.8em}
+\hrule
+\vspace{0.8em}
+
+%-----------------------------------
+% Objective
+%-----------------------------------
+
+\textbf{Objective} — A results-driven Software Engineer with a strong foundation in mathematical modeling 
+and machine learning. Passionate about building scalable applications and solving complex algorithmic challenges. 
+Proficient in full-stack development and data science, with a proven track record of delivering clean, 
+efficient code in collaborative environments. Committed to continuous learning and contributing to open-source 
+communities.
+
+\vspace{0.8em}
+\hrule
+\vspace{0.8em}
+
+%-----------------------------------
+% 2-COLUMN LAYOUT
+%-----------------------------------
+
+\begin{minipage}[t]{0.33\textwidth}
+
+\section*{Skills}
+
+\skill{Python}{5}\\
+\skill{C++}{4}\\
+\skill{Linux, CLI, Git}{4}\\
+\skill{\LaTeX}{3}\\
+
+\vspace{0.5cm}
+
+\section*{Tools}
+Python, Java, OCaml, Git, Bash, \LaTeX
+
+\vspace{0.5cm}
+
+\section*{Interests}
+
+\textbf{Chess} : Competitive player; enjoys strategic analysis and pattern recognition. \\ 
+
+\textbf{Cybersecurity} : Participating in CTF (Capture The Flag) challenges.
+
+
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.63\textwidth}
+
+% --- Academic background ---
+\section*{Academic background}
+
+\begin{tcolorbox}[cvbox]
+\textbf{MSc in Mathematics and Computer Science for AI} — Univ. Toulouse III (\emph{Since 2025})\\
+Focusing on modeling, simulation, statistics, and machine learning.
+\end{tcolorbox}
+
+\begin{tcolorbox}[cvbox]
+\textbf{BSc in Computer Science} — University of Paris-Saclay (\emph{2022 — 2025})\\
+Core curriculum in algorithms, data structures, and software engineering principles.
+\end{tcolorbox}
+
+% --- Professional Experience ---
+\section*{Professional Experience}
+
+\begin{tcolorbox}[cvbox]
+\textbf{Full-Stack Developer Intern} — TechNova Solutions (\emph{Summer 2024})\\
+Developed and deployed RESTful APIs using Node.js and improved front-end performance by 30% using React.
+\end{tcolorbox}
+
+\begin{tcolorbox}[cvbox]
+\textbf{Open Source Contributor} — GitHub Community (\emph{2023 — Present})\\
+Actively maintaining and contributing to various Python-based automation tools and documentation.
+\end{tcolorbox}
+
+% --- Projects ---
+\section*{Projects}
+
+\begin{tcolorbox}[cvbox]
+\textbf{Deep Vision Classifier} — Personal Project \\ 
+Built a convolutional neural network (CNN) to classify medical images with 94% accuracy using PyTorch.
+\end{tcolorbox}
+
+\end{minipage}
+
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass[11pt, a4paper]{letter}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{lipsum} % Le fameux package pour le texte de remplissage
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+
+% --- Expéditeur ---
+\address{
+    \textbf{John Doe} \\
+    4850 Witting Radial Suite 214 \\
+    68757 Littelchester, Wyoming \\
+    \texttt{john.doe@gmail.com}
+}
+
+\signature{John Doe}
+
+\begin{document}
+
+% --- Destinataire ---
+\begin{letter}{
+    To the attention of the Hiring Manager \\
+    TechVision Enterprise \\
+    45 Development Avenue \\
+    75000 Paris, France
+}
+
+\opening{Dear Hiring Manager,}
+
+\lipsum[1][1-4] 
+
+\lipsum[2][1-6] 
+
+\lipsum[3][1-5]
+
+\lipsum[4][1-3]
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}
