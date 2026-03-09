@@ -1,0 +1,143 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Essentials ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb, amsfonts, ntheorem, stmaryrd}
+\usepackage{bbm, dsfont, mathtools}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{graphicx, xcolor}
+\usepackage{mdframed, tcolorbox}
+\usepackage{etoolbox}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[table]{xcolor}
+% \setlength{\columnsep}{1cm} % Set space between cols
+% \setlength{\columnseprule}{0.4pt} % Separation line
+
+\usepackage{geometry}
+\geometry{
+    hmargin=2cm,
+    vmargin=2.2cm, 
+    headheight=15pt,
+    headsep=0.5cm, 
+    top=2.5cm,
+    bottom=2cm
+}
+
+% Define color for table
+\definecolor{lightgray}{gray}{0.95}
+
+% --- Maths Shorthands --- 
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\Lc}{\mathbb{L}}
+\newcommand{\Fc}{\mathbb{F}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\B}{\mathcal{B}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\myP}{\mathbb{P}}
+
+% --- Base style for right-bar env ---
+\mdfdefinestyle{sidebar}{
+    topline=false,
+    bottomline=false,
+    rightline=false,
+    linewidth=3pt,
+    innerleftmargin=10pt,
+    innerrightmargin=5pt,
+    innertopmargin=5pt,
+    innerbottommargin=5pt,
+    skipabove=10pt,
+    skipbelow=10pt,
+    nobreak=false
+}
+
+% --- METHOD Bloc ---
+\NewDocumentEnvironment{method}{O{}}
+{
+  \begin{mdframed}[style=sidebar, linecolor=blue!50, backgroundcolor=blue!5]
+  \noindent \textbf{\color{blue!80!black}\textsc{Méthode}} \IfNoValueTF{#1}{}{(\textbf{#1}) :} \vspace{0.1cm}
+}
+{\end{mdframed}}
+
+% --- TIPS Bloc ---
+\NewDocumentEnvironment{tips}{O{Astuce}}
+{
+  \begin{mdframed}[style=sidebar, linecolor=orange!70, backgroundcolor=orange!5]
+  \noindent \small \textbf{\color{orange!80!black}#1 :} 
+}
+{\end{mdframed}}
+
+% --- EXEMPLE Bloc ---
+\NewDocumentEnvironment{example}{O{}}
+{
+  \begin{mdframed}[
+    linewidth=0.5pt,
+    linecolor=gray!50,
+    backgroundcolor=gray!2,
+    roundcorner=4pt,
+    nobreak=false % <--- Allows break
+  ]
+  \begin{footnotesize}
+  \noindent \textit{\textbf{Exemple}} \IfNoValueTF{#1}{:}{\textit{(#1)} :} \vspace{0.1cm}    
+}
+{
+  \end{footnotesize}
+  \end{mdframed}
+}
+
+
+% --- Header ---
+% \pagestyle{fancy}
+% \fancyhf{}
+% \rhead{\today}
+% \cfoot{\thepage}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.8em}
+
+% --- Itemize Settings ---
+\setlist[itemize,1]{label=\textbullet}
+
+\begin{document}
+
+% --- Header Titre --- 
+\begin{center}
+    {\scshape Method Sheet} \\
+    \vspace{0.2cm}
+    {\Large\bfseries Algorithmics} \\
+    \rule{\linewidth}{1pt}
+\end{center}
+
+% \thispagestyle{fancy}
+
+% =========================================================================================
+
+\begin{method}[Compute Kruskal Algorithm]
+    Method here...
+\end{method}
+
+\begin{example}[Compute Kruskal Algorithm]
+    Example here...
+\end{example}
+
+\begin{tips}
+    Tips here... 
+\end{tips}
+
+
+
+\end{document}
